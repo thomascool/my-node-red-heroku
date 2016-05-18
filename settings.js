@@ -17,8 +17,6 @@
 var path = require("path");
 var when = require("when");
 
-process.env.MONGOLAB_URI = process.env.MONGODB_URI;
-
 var settings = module.exports = {
     uiPort: process.env.PORT || 1880,
     mqttReconnectTime: 15000,
@@ -71,5 +69,7 @@ if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
     }
 }
 
+
 settings.mongoAppname = 'nodered';
 settings.mongoUrl = process.env.MONGODB_URI;
+process.env.MONGOLAB_URI = process.env.MONGODB_URI;
