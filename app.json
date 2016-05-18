@@ -17,7 +17,7 @@
     },
     "FLOW_REPO": {
       "description": "The mongoAppname for Flow Repo.",
-      "value": "nodered"
+      "value": ""
     }
   },
   "addons": [ "mongolab" ]
