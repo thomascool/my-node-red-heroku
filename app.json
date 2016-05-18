@@ -14,6 +14,10 @@
     "NODE_RED_PASSWORD": {
       "description": "The password to secure the editor.",
       "value": ""
+    },
+    "FLOW_REPO": {
+      "description": "The mongoAppname for Flow Repo.",
+      "value": ""
     }
   },
   "addons": [ "mongolab" ]
