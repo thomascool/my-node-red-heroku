@@ -43,8 +43,41 @@ var settings = module.exports = {
     // Serve up the welcome page
     httpStatic: path.join(__dirname,"public"),
 
-    functionGlobalContext: { },
-
+    functionGlobalContext: {
+        cryptoModule:require('crypto'),
+        config : {  "webRequest" : {
+                        "headers": {
+                            "Accept": "application/xml, text/xml, */*",
+                            "Accept-Encoding": "gzip, deflate, sdch",
+                            "Accept-Language": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
+                            "Cache-Control": "no-cache",
+                            "Connection": "keep-alive",
+                            "Host": "invest.ameritrade.com",
+                            "Pragma": "no-cache",
+                            "Referer": "https://invest.ameritrade.com/cgi-bin/apps/u/OptionChain",
+                            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36",
+                            "X-Requested-With": "XMLHttpRequest",
+                            "Cookie": null
+                        },
+                        "url": "https://invest.ameritrade.com/cgi-bin/apps/u/OptionChain",
+                        "urlRealTime": "https://invest.ameritrade.com/cgi-bin/apps/xml/Quote"
+                    },
+                    "dbConfig": {
+                        "host": "localhost",
+                        "port": 5432,
+                        "user": "thomas",
+                        "database": "bigoptions"
+                    },
+                    "stockList" : {
+                        "full" : ["SVXY","UVXY","SPY","SPXL","SPLS","$SPX.X","$NDX.X","$RUT.X","TNA","TZA"]
+                    },
+                    "debug" : 0,
+                    "saveHTML" : 1,
+                    "marketHours" : 1,
+                    "mobileNumber" : "4243247194",
+                    "blower" : "https://59fa601e-d364-490c-9284-329a273240e4:dUuEgPOaUW-IwwWWJXcCow@api.blower.io/"
+        }
+    },
     storageModule: require("./mongostorage")
 }
 
